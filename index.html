@@ -43,10 +43,10 @@
                 <p>IT Professional, Web Developer & Graphic Designer specializing in web development, digital graphics, UI-focused design, and digital media production. With hands-on experience in HTML5, CSS3, JavaScript, Bootstrap, Adobe Creative Suite, and IT support infrastructure.</p>
                 <p style="margin-top: 10px;">+254 748 690 154 &nbsp;◇&nbsp; kimutai8463@gmail.com</p>
                 <div class="social-media">
-                    <a href="#" style="--i:6"><i class='bx bxl-github'></i></a>
-                    <a href="mailto:kimutai8463@gmail.com" style="--i:7"><i class='bx bxl-gmail'></i></a>
-                    <a href="#" style="--i:8"><i class='bx bxl-linkedin'></i></a>
-                    <a href="tel:+254748690154" style="--i:9"><i class='bx bx-phone'></i></a>
+                    <a href="https://ke.linkedin.com/in/sang-sang-044a56350" target="_blank" rel="noopener noreferrer" style="--i:6" aria-label="LinkedIn profile"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=kimutai8463@gmail.com" target="_blank" rel="noopener noreferrer" style="--i:7" aria-label="Compose an email to Kevin Cheruiyot Sang"><i class='bx bxl-gmail'></i></a>
+                    <a href="https://x.com/sangkimu" target="_blank" rel="noopener noreferrer" style="--i:8" aria-label="X profile"><i class='bx bxl-twitter'></i></a>
+                    <a href="tel:+254748690154" style="--i:9" aria-label="Call Kevin Cheruiyot Sang"><i class='bx bx-phone'></i></a>
                 </div>
                 <a href="cv.html" class="btn">View CV</a>
             </div>
@@ -471,7 +471,7 @@
                 <input name="name" type="text" class="feedback-input" placeholder="Name" required />
                 <input name="email" type="email" class="feedback-input" placeholder="Email" required />
                 <textarea name="message" class="feedback-input" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
+                <button type="submit">Send Message</button>
             </form>
 
         </section>
@@ -536,6 +536,16 @@
                submitButton.textContent = 'Sending...';
                submitButton.disabled = true;
 
+               if (typeof emailjs === 'undefined') {
+                   const subject = encodeURIComponent(`Portfolio message from ${name}`);
+                   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+                   window.open(`https://mail.google.com/mail/u/0/?view=cm&fs=1&to=kimutai8463@gmail.com&su=${subject}&body=${body}`, '_blank', 'noopener,noreferrer');
+                   submitButton.textContent = originalButtonText;
+                   submitButton.disabled = false;
+                   form.reset();
+                   return;
+               }
+
                // Send email using EmailJS
                emailjs.send("service_w1zmfwm", "template_vikhm7q", {
                    from_name: name,
@@ -563,10 +573,10 @@
 
        <section class="footer">
         <div class="social">
-            <a href="#" style="--i:6"><i class='bx bxl-github'></i></a>
-            <a href="#" style="--i:7"><i class='bx bxl-twitter'></i></a>
-            <a href="mailto:kimutai8463@gmail.com" style="--i:8"><i class='bx bxl-gmail'></i></a>
-            <a href="#" style="--i:9"><i class='bx bxl-linkedin'></i></a>
+              <a href="https://ke.linkedin.com/in/sang-sang-044a56350" target="_blank" rel="noopener noreferrer" style="--i:6" aria-label="LinkedIn profile"><i class='bx bxl-linkedin'></i></a>
+              <a href="https://x.com/sangkimu" target="_blank" rel="noopener noreferrer" style="--i:7" aria-label="X profile"><i class='bx bxl-twitter'></i></a>
+            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;to=kimutai8463@gmail.com" target="_blank" rel="noopener noreferrer" style="--i:8" aria-label="Compose an email to Kevin Cheruiyot Sang"><i class='bx bxl-gmail'></i></a>
+              <a href="tel:+254748690154" style="--i:9" aria-label="Call Kevin Cheruiyot Sang"><i class='bx bx-phone'></i></a>
         </div>
         <ul class="list">
             <li><a href="#" style="--i:1" class="active">Home</a></li>
