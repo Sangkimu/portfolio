@@ -715,6 +715,8 @@ input[type=checkbox] {
 
 .card {
     position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
     color: #2c3e50;
     background: #fff;
     border-radius: 12px;
@@ -725,23 +727,23 @@ input[type=checkbox] {
 }
 
 .card:hover {
-    transform: translate3d(0, -8px, 0) rotate(0deg);
+    transform: translate3d(0, -8px, 0) rotateY(180deg);
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.18);
 }
 
 .col:nth-child(3n + 1) .card:hover,
 .col:nth-child(3n + 1) .card:focus-within {
-    transform: translate3d(-8px, -10px, 0) rotate(-1deg);
+    transform: translate3d(-8px, -10px, 0) rotateY(180deg);
 }
 
 .col:nth-child(3n + 2) .card:hover,
 .col:nth-child(3n + 2) .card:focus-within {
-    transform: translate3d(0, -14px, 0) rotate(.5deg);
+    transform: translate3d(0, -14px, 0) rotateY(180deg);
 }
 
 .col:nth-child(3n) .card:hover,
 .col:nth-child(3n) .card:focus-within {
-    transform: translate3d(8px, -10px, 0) rotate(1deg);
+    transform: translate3d(8px, -10px, 0) rotateY(180deg);
 }
 
 .card:focus-within {
@@ -794,7 +796,9 @@ input[type=checkbox] {
     font-weight: 700;
     position: relative;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    transform-style: preserve-3d;
     border-radius: 0;
     overflow: visible;
     box-shadow: none;
@@ -802,6 +806,8 @@ input[type=checkbox] {
 
 .card__side--front {
     background-color: #fff;
+    z-index: 1;
+    transition: transform .7s cubic-bezier(.2, .7, .2, 1);
 }
 
 .card__side--back {
@@ -810,12 +816,10 @@ input[type=checkbox] {
     z-index: 2;
     display: flex;
     align-items: center;
-    background: rgba(15, 35, 53, 0.94);
+    background: #0f2335;
     color: #fff;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(12px);
-    transition: opacity .35s ease, visibility .35s ease, transform .35s ease;
+    transform: rotateY(180deg);
+    transition: transform .7s cubic-bezier(.2, .7, .2, 1);
 }
 
 .card__side--back-1 {
@@ -837,13 +841,6 @@ input[type=checkbox] {
 }
 .card__side--back-6{
     background-image: none;
-}
-
-.card:hover .card__side--back,
-.card:focus-within .card__side--back {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
 }
 
 .card__picture {
