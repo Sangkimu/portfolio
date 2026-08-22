@@ -727,23 +727,23 @@ input[type=checkbox] {
 }
 
 .card:hover {
-    transform: translate3d(0, -8px, 0) rotateY(180deg);
+    transform: translate3d(0, -8px, 0);
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.18);
 }
 
 .col:nth-child(3n + 1) .card:hover,
 .col:nth-child(3n + 1) .card:focus-within {
-    transform: translate3d(-8px, -10px, 0) rotateY(180deg);
+    transform: translate3d(-8px, -10px, 0);
 }
 
 .col:nth-child(3n + 2) .card:hover,
 .col:nth-child(3n + 2) .card:focus-within {
-    transform: translate3d(0, -14px, 0) rotateY(180deg);
+    transform: translate3d(0, -14px, 0);
 }
 
 .col:nth-child(3n) .card:hover,
 .col:nth-child(3n) .card:focus-within {
-    transform: translate3d(8px, -10px, 0) rotateY(180deg);
+    transform: translate3d(8px, -10px, 0);
 }
 
 .card:focus-within {
@@ -807,7 +807,7 @@ input[type=checkbox] {
 .card__side--front {
     background-color: #fff;
     z-index: 1;
-    transition: transform .7s cubic-bezier(.2, .7, .2, 1);
+    transition: transform .8s cubic-bezier(.2, .7, .2, 1);
 }
 
 .card__side--back {
@@ -819,7 +819,7 @@ input[type=checkbox] {
     background: #0f2335;
     color: #fff;
     transform: rotateY(180deg);
-    transition: transform .7s cubic-bezier(.2, .7, .2, 1);
+    transition: transform .8s cubic-bezier(.2, .7, .2, 1);
 }
 
 .card__side--back-1 {
@@ -841,6 +841,16 @@ input[type=checkbox] {
 }
 .card__side--back-6{
     background-image: none;
+}
+
+.card:hover .card__side--back,
+.card:focus-within .card__side--back {
+    transform: rotateY(0deg);
+}
+
+.card:hover .card__side--front,
+.card:focus-within .card__side--front {
+    transform: rotateY(-180deg);
 }
 
 .card__picture {
