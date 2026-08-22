@@ -720,13 +720,73 @@ input[type=checkbox] {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.12);
-    transition: transform .3s ease, box-shadow .3s ease;
+    transition: transform .35s ease, box-shadow .35s ease;
     animation: MoveInBottom 0.8s ease-out both;
 }
 
 .card:hover {
-    transform: translateY(-6px);
+    transform: translate3d(0, -8px, 0) rotate(0deg);
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.18);
+}
+
+.col:nth-child(3n + 1) .card:hover,
+.col:nth-child(3n + 1) .card:focus-within {
+    transform: translate3d(-8px, -10px, 0) rotate(-1deg);
+}
+
+.col:nth-child(3n + 2) .card:hover,
+.col:nth-child(3n + 2) .card:focus-within {
+    transform: translate3d(0, -14px, 0) rotate(.5deg);
+}
+
+.col:nth-child(3n) .card:hover,
+.col:nth-child(3n) .card:focus-within {
+    transform: translate3d(8px, -10px, 0) rotate(1deg);
+}
+
+.card:focus-within {
+    outline: 3px solid #0ef;
+    outline-offset: 4px;
+}
+
+.card__picture {
+    transition: transform .5s ease, filter .5s ease;
+}
+
+.card:hover .card__picture,
+.card:focus-within .card__picture {
+    transform: scale(1.04);
+    filter: saturate(1.15);
+}
+
+.card__picture-label {
+    transition: transform .35s ease, background-color .35s ease;
+}
+
+.card:hover .card__picture-label,
+.card:focus-within .card__picture-label {
+    transform: translateY(-4px);
+    background-color: rgba(0, 0, 0, 0.36);
+}
+
+.card__heading {
+    transition: color .3s ease, transform .3s ease;
+}
+
+.card:hover .card__heading,
+.card:focus-within .card__heading {
+    color: #087f8c;
+    transform: translateX(4px);
+}
+
+.card .btn--white {
+    transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease;
+}
+
+.card .btn--white:hover,
+.card .btn--white:focus-visible {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 18px rgba(31, 36, 45, 0.18);
 }
 
 .card__side {
@@ -745,9 +805,17 @@ input[type=checkbox] {
 }
 
 .card__side--back {
-    transform: none;
-    background: #f8fbff;
-    border-top: 1px solid #e8eef7;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    background: rgba(15, 35, 53, 0.94);
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity .35s ease, visibility .35s ease, transform .35s ease;
 }
 
 .card__side--back-1 {
@@ -771,12 +839,11 @@ input[type=checkbox] {
     background-image: none;
 }
 
-.card:hover .card__side--front {
-    transform: none;
-}
-
-.card:hover .card__side--back {
-    transform: none;
+.card:hover .card__side--back,
+.card:focus-within .card__side--back {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 .card__picture {
@@ -890,17 +957,26 @@ input[type=checkbox] {
 }
 
 .card__cta {
-    position: static;
-    transform: none;
+    position: relative;
     width: 100%;
-    text-align: left;
-    padding: 1.2rem 2rem 2rem;
+    text-align: center;
+    padding: 2.4rem 2rem;
+}
+
+.card__hover-description {
+    max-width: 30rem;
+    margin: 0 auto 1.8rem;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.55;
 }
 
 .card__price-box {
-    text-align: left;
+    justify-content: center;
+    text-align: center;
     margin-bottom: 1.2rem;
-    color: #2c3e50;
+    color: #fff;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -916,8 +992,8 @@ input[type=checkbox] {
     font-weight: 600;
     letter-spacing: .04em;
     text-transform: uppercase;
-    background: #e8f4ff;
-    color: #2062a0;
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
     padding: .45rem .8rem;
     border-radius: 999px;
 }
@@ -1164,6 +1240,17 @@ textarea {
     100% {
         opacity: 1;
         transform: translate(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
 
