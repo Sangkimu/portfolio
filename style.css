@@ -883,6 +883,42 @@ input[type=checkbox] {
     background-image: linear-gradient(135deg, #1e40af, #9333ea);
 }
 
+.card__picture-hostel {
+    background-image: linear-gradient(135deg, rgba(15, 118, 110, .3), rgba(6, 182, 212, .25)), url('./images/restaurant.jpg');
+}
+
+.card__picture-dashboard {
+    background-image: linear-gradient(135deg, rgba(21, 128, 61, .3), rgba(34, 197, 94, .25)), url('./images/eoszidi.png');
+}
+
+.card__picture-blood {
+    background-image: linear-gradient(135deg, rgba(29, 78, 216, .28), rgba(124, 58, 237, .25)), url('./images/fk.jpg');
+}
+
+.card__picture-agritech {
+    background-image: linear-gradient(135deg, rgba(15, 118, 110, .25), rgba(14, 165, 233, .25)), url('./images/halisi.png');
+}
+
+.card__picture-design {
+    background-image: linear-gradient(135deg, rgba(22, 101, 52, .25), rgba(16, 185, 129, .25)), url('./images/delani.png');
+}
+
+.card__picture-animation {
+    background-image: linear-gradient(135deg, rgba(30, 64, 175, .25), rgba(147, 51, 234, .25)), url('./images/home.png');
+}
+
+.card__picture-web {
+    background-image: linear-gradient(135deg, rgba(15, 118, 110, .25), rgba(6, 182, 212, .25)), url('./images/home.png');
+}
+
+.card__picture-uiux {
+    background-image: linear-gradient(135deg, rgba(21, 128, 61, .25), rgba(34, 197, 94, .25)), url('./images/delani.png');
+}
+
+.card__picture-fullstack {
+    background-image: linear-gradient(135deg, rgba(29, 78, 216, .25), rgba(124, 58, 237, .25)), url('./images/eoszidi.png');
+}
+
 .card__picture-label {
     font-size: 1.2rem;
     font-weight: 600;
