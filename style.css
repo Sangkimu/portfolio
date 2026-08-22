@@ -234,9 +234,9 @@ input[type=checkbox] {
     box-shadow: 0 1rem 2rem rgba(76, 158, 158, 0.644);
 } */
 .home-img {
+    width: min(32vw, 450px);
     max-width: 450px;
-    height: 30%;
-    width: 20%;
+    height: auto;
     margin-right: -20px;
     animation: zoomIn 1s ease forwards;
     animation-delay: .2s;
@@ -246,8 +246,12 @@ input[type=checkbox] {
 }
 
 .home-img img {
-    justify-content: center;
-    align-items: center;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50px;
 
 }
 
@@ -454,6 +458,7 @@ input[type=checkbox] {
 
 .profile-image {
     flex: 0 0 220px;
+    max-width: 280px;
 }
 
 .profile-image img {
