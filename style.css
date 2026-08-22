@@ -738,17 +738,17 @@ input[type=checkbox] {
 
 .col:nth-child(3n + 1) .card:hover,
 .col:nth-child(3n + 1) .card:focus-within {
-    transform: translate3d(-8px, -10px, 0);
+    transform: translate3d(0, -8px, 0);
 }
 
 .col:nth-child(3n + 2) .card:hover,
 .col:nth-child(3n + 2) .card:focus-within {
-    transform: translate3d(0, -14px, 0);
+    transform: translate3d(0, -8px, 0);
 }
 
 .col:nth-child(3n) .card:hover,
 .col:nth-child(3n) .card:focus-within {
-    transform: translate3d(8px, -10px, 0);
+    transform: translate3d(0, -8px, 0);
 }
 
 .card:focus-within {
@@ -1584,4 +1584,94 @@ textarea {
     .heading-secondary {
         font-size: 2rem;
     }
+}
+
+.gallery-page {
+    min-height: 100vh;
+    background: #f4f8fb;
+    color: #1f242d;
+}
+
+.gallery {
+    width: min(114rem, 92%);
+    margin: 0 auto;
+    padding: 5rem 0 8rem;
+}
+
+.gallery__back {
+    display: inline-block;
+    margin-bottom: 5rem;
+    color: #087f8c;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.gallery__header {
+    max-width: 62rem;
+    margin-bottom: 4rem;
+}
+
+.gallery__eyebrow {
+    margin-bottom: 1rem;
+    color: #087f8c;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.gallery__header h1 {
+    margin-bottom: 1rem;
+    color: #1f242d;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+}
+
+.gallery__header > p:last-child {
+    color: #52606d;
+    font-size: 1.7rem;
+    line-height: 1.6;
+}
+
+.gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.gallery__item {
+    position: relative;
+    min-height: 24rem;
+    margin: 0;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1rem 2.5rem rgba(31, 36, 45, .12);
+}
+
+.gallery__item--wide {
+    grid-column: span 2;
+}
+
+.gallery__item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 24rem;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.gallery__item:hover img {
+    transform: scale(1.04);
+}
+
+.gallery__item figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1.2rem 1.5rem;
+    color: #fff;
+    background: rgba(15, 35, 53, .84);
+    font-size: 1.4rem;
 }
