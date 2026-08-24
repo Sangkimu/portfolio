@@ -982,6 +982,28 @@ input[type=checkbox] {
     padding: .6rem 2rem 1.8rem;
 }
 
+.animation-clips {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .8rem;
+    margin-top: 1.2rem;
+}
+
+.animation-clip {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 2px solid rgba(14, 239, 255, 0.35);
+    border-radius: .6rem;
+    background: #1f242d;
+    object-fit: cover;
+}
+
+.animation-clip:focus-visible {
+    outline: 2px solid #0ef;
+    outline-offset: 2px;
+}
+
 .card__details ul {
     list-style: none;
     width: 80%;
@@ -1588,12 +1610,13 @@ textarea {
 
 .gallery-page {
     min-height: 100vh;
-    background: #f4f8fb;
-    color: #1f242d;
+    background: #1f242d;
+    color: #fff;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
 .gallery {
-    width: min(114rem, 92%);
+    width: min(110rem, 92%);
     margin: 0 auto;
     padding: 5rem 0 8rem;
 }
@@ -1601,20 +1624,25 @@ textarea {
 .gallery__back {
     display: inline-block;
     margin-bottom: 5rem;
-    color: #087f8c;
+    color: #0ef;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
 
 .gallery__header {
     max-width: 62rem;
     margin-bottom: 4rem;
+    padding: 2rem 2.4rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(14, 239, 255, 0.15);
+    border-radius: 1.6rem;
 }
 
 .gallery__eyebrow {
     margin-bottom: 1rem;
-    color: #087f8c;
-    font-size: 1.3rem;
+    color: #0ef;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: .12em;
     text-transform: uppercase;
@@ -1622,80 +1650,173 @@ textarea {
 
 .gallery__header h1 {
     margin-bottom: 1rem;
-    color: #1f242d;
+    color: #fff;
     font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 1.1;
 }
 
 .gallery__header > p:last-child {
-    color: #52606d;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1.7rem;
     line-height: 1.6;
 }
 
-.gallery__category + .gallery__category {
-    margin-top: 6rem;
-}
-
-.gallery__category h2 {
-    margin-bottom: 2rem;
-    color: #087f8c;
-    font-size: 2.8rem;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-}
-
-.gallery__grid {
+.gallery__albums {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
 }
 
-.gallery__item {
-    position: relative;
-    min-height: 22rem;
+.album {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(14, 239, 255, 0.15);
+    border-radius: 2rem;
+    padding: 2rem;
+    box-shadow: 0 1.4rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.album__header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1.8rem;
+}
+
+.album__header h2 {
     margin: 0;
-    overflow: hidden;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1rem 2.5rem rgba(31, 36, 45, .12);
+    color: #0ef;
+    font-size: clamp(2.2rem, 2vw, 3rem);
+    letter-spacing: .08em;
+    text-transform: uppercase;
 }
 
-.gallery__item--wide {
-    grid-column: span 2;
+.album__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    background: rgba(14, 239, 255, 0.12);
+    color: #0ef;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
-.gallery__item img {
+.album__card {
+    width: 100%;
+    padding: 1.4rem;
+    border: 1px solid rgba(14, 239, 255, 0.2);
+    border-radius: 1.6rem;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), 0 1.3rem 2.6rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.album__card:hover,
+.album__card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: inset 0 0 0 1px rgba(14, 239, 255, 0.25), 0 1.8rem 3rem rgba(0, 0, 0, 0.38);
+}
+
+.album__photo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36rem;
+    border-radius: 1.2rem;
+    background: #0f2335;
+    border: 1px solid rgba(14, 239, 255, 0.15);
+}
+
+.album__photo::before,
+.album__photo::after {
+    content: "";
+    position: absolute;
+    inset: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+    border-radius: 0.8rem;
+}
+
+.album__photo::after {
+    inset: 1.8rem;
+    border-color: rgba(14, 239, 255, 0.35);
+}
+
+.album__photo img {
     display: block;
     width: 100%;
-    height: 100%;
-    min-height: 22rem;
-    object-fit: cover;
-    transition: transform .4s ease;
+    height: auto;
+    max-height: 72rem;
+    object-fit: contain;
+    transition: transform 0.4s ease;
 }
 
-.gallery__item:hover img {
-    transform: scale(1.04);
+.album__card:hover .album__photo img {
+    transform: scale(1.02);
 }
 
-.gallery__item figcaption {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1.2rem 1.5rem;
-    color: #fff;
-    background: rgba(15, 35, 53, .84);
+.album__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.4rem;
+}
+
+.album__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(14, 239, 255, 0.12);
+    color: #0ef;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.album__label {
     font-size: 1.4rem;
+    color: #fff;
+    text-align: right;
+    line-height: 1.5;
 }
 
 @media (max-width: 900px) {
-    .gallery__grid {
-        grid-template-columns: repeat(2, 1fr);
+    .gallery__albums {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    .gallery__grid {
-        grid-template-columns: 1fr;
+    .album {
+        padding: 1.5rem;
+    }
+
+    .album__header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .album__photo {
+        min-height: 28rem;
+    }
+
+    .album__meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .album__label {
+        text-align: left;
     }
 }
