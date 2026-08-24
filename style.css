@@ -1004,6 +1004,43 @@ input[type=checkbox] {
     outline-offset: 2px;
 }
 
+.animation-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem;
+}
+
+.animation-gallery__item {
+    padding: 1.4rem;
+    border: 1px solid rgba(14, 239, 255, 0.15);
+    border-radius: 1.6rem;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 1.3rem 2.6rem rgba(0, 0, 0, 0.25);
+}
+
+.animation-gallery__item video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 1px solid rgba(14, 239, 255, 0.3);
+    border-radius: 1rem;
+    background: #0f2335;
+}
+
+.animation-gallery__item h2 {
+    margin: 1.2rem 0 0;
+    color: #0ef;
+    font-size: 1.7rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+    .animation-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
 .card__details ul {
     list-style: none;
     width: 80%;
