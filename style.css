@@ -1027,6 +1027,12 @@ input[type=checkbox] {
     background: #0f2335;
 }
 
+.animation-gallery__item audio {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}
+
 .animation-gallery__item h2 {
     margin: 1.2rem 0 0;
     color: #0ef;
@@ -1696,6 +1702,31 @@ textarea {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.7rem;
     line-height: 1.6;
+}
+
+.animation-sound-toggle {
+    margin-top: 1.8rem;
+    padding: .9rem 1.4rem;
+    border: 1px solid #0ef;
+    border-radius: .6rem;
+    background: transparent;
+    color: #0ef;
+    font: inherit;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.animation-sound-toggle:hover,
+.animation-sound-toggle:focus-visible {
+    background: #0ef;
+    color: #1f242d;
+}
+
+.animation-sound-toggle:disabled {
+    border-color: rgba(14, 239, 255, 0.45);
+    color: rgba(14, 239, 255, 0.7);
+    cursor: default;
 }
 
 .gallery__albums {
