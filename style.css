@@ -896,11 +896,11 @@ input[type=checkbox] {
 }
 
 .card__picture-hostel {
-    background-image: linear-gradient(135deg, rgba(15, 118, 110, .3), rgba(6, 182, 212, .25)), url('./images/restaurant.jpg');
+    background-image: linear-gradient(135deg, rgba(15, 118, 110, .3), rgba(6, 182, 212, .25)), url('./images/home.png');
 }
 
 .card__picture-dashboard {
-    background-image: linear-gradient(135deg, rgba(21, 128, 61, .3), rgba(34, 197, 94, .25)), url('./images/eoszidi.png');
+    background-image: linear-gradient(135deg, rgba(21, 128, 61, .3), rgba(34, 197, 94, .25)), url('./images/sundayschool.jpg');
 }
 
 .card__picture-blood {
