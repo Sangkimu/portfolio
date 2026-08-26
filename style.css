@@ -19,6 +19,7 @@ body {
     background-color: #1f242d;
     color: #fff;
     box-sizing: inherit;
+    overflow-x: hidden;
     /* padding: 3rem; */
 
 
@@ -1401,7 +1402,83 @@ textarea {
 
 
 
+@media (max-width: 900px) {
+    .home {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 2rem;
+        padding-top: 110px;
+    }
+
+    .home-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .home-content h1,
+    .home-content h3,
+    .home-content p {
+        text-align: center;
+    }
+
+    .home-img {
+        display: block;
+        width: min(70vw, 320px);
+        margin: 0 auto;
+    }
+
+    .home-img img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .about-row {
+        flex-direction: column;
+    }
+
+    .about-profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-image {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .overview-text {
+        text-align: center;
+    }
+}
+
 @media (max-width: 768px) {
+    .about-row {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 1rem;
+    }
+
+    .about-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        gap: 0.8rem;
+        flex: 1 1 auto;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .nav-item {
+        min-width: 0;
+        text-align: center;
+        padding: 0.9rem 0.7rem;
+    }
+
+    .nav-item h3 {
+        font-size: 1.2rem;
+    }
+
     .menu {
         display: none;
         position: absolute;
@@ -1457,10 +1534,6 @@ textarea {
         margin-bottom: 20px;
     }
 
-    .home-img {
-        display: none;
-    }
-
     .social-media {
         display: flex;
         justify-content: center;
@@ -1510,26 +1583,14 @@ textarea {
     }
 
     .about-nav {
-        flex: 1 1 100% !important;
-        margin-bottom: 10px;
-        display: flex;
-        overflow-x: auto;
-        padding: 5px;
-        gap: 5px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-
-    .about-nav::-webkit-scrollbar {
-        display: none;
+        grid-template-columns: repeat(2, minmax(110px, 1fr));
+        padding: 8px;
+        gap: 8px;
     }
 
     .nav-item {
-        flex: 0 0 auto;
-        white-space: nowrap;
-        margin-bottom: 0 !important;
-        min-width: 100px;
+        white-space: normal;
+        min-width: 0;
         text-align: center;
         padding: 8px !important;
     }
