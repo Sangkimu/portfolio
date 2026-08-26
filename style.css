@@ -647,6 +647,7 @@ input[type=checkbox] {
     /* margin-top: -10rem;  */
 
 }
+
 .project-animation--2{
     animation: slideBottom 2s ease forwards;
     animation-fill-mode: both;
@@ -673,7 +674,7 @@ input[type=checkbox] {
 }
 
 .row {
-    max-width: 114rem;
+    max-width: 110rem;
     margin: 0 auto;
 }
 
@@ -692,31 +693,31 @@ input[type=checkbox] {
 }
 
 .row [class^="col-"]:not(:last-child) {
-    margin-right: 6rem;
+    margin-right: 3.5rem;
 }
 
 .row .col-1-of-2 {
-    width: calc((100% - 6rem)/2);
+    width: calc((100% - 3.5rem)/2);
 }
 
 .row .col-1-of-3 {
-    width: calc((100% - 2 * 6rem) / 3);
+    width: calc((100% - 2 * 3.5rem) / 3);
 }
 
 .row .col-2-of-3 {
-    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem);
+    width: calc(2 * ((100% - 2 * 3.5rem) / 3) + 3.5rem);
 }
 
 .row .col-1-of-4 {
-    width: calc((100% - 3 * 6rem) / 4);
+    width: calc((100% - 3 * 3.5rem) / 4);
 }
 
 .row .col-2-of-4 {
-    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
+    width: calc(2 * ((100% - 3 * 3.5rem) / 4) + 3.5rem);
 }
 
-￼ .row .col-3-of-4 {
-    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
+.row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 3.5rem) / 4) + 2 * 3.5rem);
 }
 
 .card {
@@ -862,7 +863,7 @@ input[type=checkbox] {
 .card__picture {
     background-size: cover;
     background-position: center;
-    height: 18rem;
+    height: 17rem;
     background-blend-mode: normal;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -981,6 +982,10 @@ input[type=checkbox] {
 
 .card__details {
     padding: .6rem 2rem 1.8rem;
+}
+
+.card__details-paragraph {
+    font-size: 1.35rem;
 }
 
 .animation-clips {
@@ -1450,6 +1455,28 @@ textarea {
 
     .overview-text {
         text-align: center;
+    }
+
+    .row {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    .row [class^="col-"]:not(:last-child) {
+        margin-right: 1.5rem;
+    }
+
+    .row .col-1-of-3 {
+        width: calc((100% - 2 * 1.5rem) / 3);
+    }
+
+    .card__details {
+        padding: .6rem 1.6rem 1.8rem;
+    }
+
+    .card__details-paragraph {
+        font-size: 1.35rem;
+        line-height: 1.6;
     }
 }
 
