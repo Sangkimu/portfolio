@@ -16,7 +16,7 @@
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--light);color:var(--slate);font:16px/1.65 Inter,Arial,sans-serif}
     a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
     .topbar{background:var(--navy);color:#fff}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{font:700 1.15rem Poppins,sans-serif;letter-spacing:.2px}.brand span{color:var(--gold)}
+    .brand{display:inline-flex;align-items:center;gap:10px;font:700 1.15rem Poppins,sans-serif;letter-spacing:.2px}.brand img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid rgba(217,164,65,.75);box-shadow:0 6px 18px rgba(0,0,0,.22)}.brand span{color:var(--gold)}
     .navlinks{display:flex;gap:24px;align-items:center;flex-wrap:wrap;font-size:.94rem}.navlinks a{color:#e9eff2}.navlinks a:hover,.navlinks a[aria-current=page]{color:var(--gold)}
     .hero{background:linear-gradient(130deg,#102C3A,#263746);color:#fff;padding:76px 0 68px;text-align:center}
     .eyebrow{color:var(--gold);font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
@@ -46,7 +46,10 @@
 <body>
   <header class="topbar">
     <nav class="nav wrap" aria-label="Main navigation">
-      <a class="brand" href="./index.html">SK <span>Digital Solution</span></a>
+      <a class="brand" href="./index.html" aria-label="SK Digital Solution home">
+        <img src="./images/SK Digital Solution logo.png" alt="">
+        <b>SK <span>Digital Solution</span></b>
+      </a>
       <div class="navlinks">
         <a href="./index.html">Home</a>
         <a href="./index.html#services">Services</a>
