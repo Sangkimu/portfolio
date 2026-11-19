@@ -1229,30 +1229,196 @@ textarea {
     resize: vertical;
 }
 
-[type="submit"] {
-    font-family: 'Poppins', sans-serif;
+/* PROJECT QUOTE FORM */
+.contact {
+    padding: 8rem 5%;
+    background: linear-gradient(145deg, rgba(16, 44, 58, 0.96), rgba(31, 36, 45, 0.98));
+}
+
+.contact .section-heading {
+    max-width: 760px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+.contact .section-heading h2 {
+    margin: 1rem 0;
+    color: #fff;
+    font-size: clamp(3rem, 5vw, 4.8rem);
+}
+
+.contact .section-heading p:last-child {
+    color: #cbd6dc;
+    font-size: 1.6rem;
+}
+
+.quote-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.75fr) minmax(420px, 1.25fr);
+    gap: 3rem;
+    max-width: 1120px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.quote-intro,
+.quote-form {
+    border: 1px solid rgba(14, 239, 255, 0.16);
+    border-radius: 18px;
+}
+
+.quote-intro {
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.quote-intro h3 {
+    margin-bottom: 1.2rem;
+    color: #0ef;
+    font-size: 2.4rem;
+}
+
+.quote-intro p,
+.quote-tip {
+    color: #d6e1e5;
+    font-size: 1.5rem;
+}
+
+.quote-tip {
+    margin: 2.4rem 0;
+    padding: 1.8rem 2rem;
+    border-left: 3px solid #0ef;
+    background: rgba(14, 239, 255, 0.07);
+}
+
+.quote-tip ul {
+    margin: 1rem 0 0 2rem;
+}
+
+.quote-tip li {
+    margin: 0.5rem 0;
+    list-style: disc;
+}
+
+.quote-small {
+    margin-top: 2rem;
+    font-size: 1.2rem !important;
+    color: #aebdc3 !important;
+}
+
+.quote-form {
+    max-width: none;
     width: 100%;
-    background-color: #0ef;
-    border-radius: 5px;
-    border: 0;
-    cursor: pointer;
-    color: white;
-    font-size: 24px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    transition: all 0.3s;
-    margin-top: -4px;
+    margin: 0;
+    padding: 3rem;
+    background: #fff;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+}
+
+.quote-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    min-width: 0;
+}
+
+.quote-field label {
+    color: #263746;
+    font-size: 1.4rem;
     font-weight: 700;
 }
 
-[type="submit"]:hover {
-    background-color: #0ef;
+.quote-field input,
+.quote-field select,
+.quote-field textarea {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid #cbd5dc;
+    border-radius: 9px;
+    background: #fff;
+    color: #263746;
+    font: 500 1.5rem 'Poppins', sans-serif;
+    padding: 1.2rem 1.4rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.quote-field textarea {
+    height: auto;
+    min-height: 150px;
+    line-height: 1.6;
+}
 
+.quote-field input::placeholder,
+.quote-field textarea::placeholder {
+    color: #8a999f;
+}
 
+.quote-field input:focus,
+.quote-field select:focus,
+.quote-field textarea:focus {
+    border-color: #0ef;
+    box-shadow: 0 0 0 3px rgba(14, 239, 255, 0.18);
+}
 
-  
+.quote-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem;
+}
+
+.quote-form > .quote-field,
+.quote-form > .quote-row {
+    margin-bottom: 1.8rem;
+}
+
+.quote-submit {
+    width: 100%;
+    min-height: 52px;
+    margin-top: 0;
+    border: 0;
+    border-radius: 9px;
+    background: #102c3a;
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(16, 44, 58, 0.18);
+    font: 700 1.6rem 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.quote-submit:hover {
+    background: #1d4a5e;
+    transform: translateY(-2px);
+}
+
+.quote-status {
+    margin: 1.2rem 0 0;
+    color: #647482;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .quote-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact {
+        padding: 6rem 3%;
+    }
+
+    .quote-intro,
+    .quote-form {
+        padding: 2rem;
+    }
+
+    .quote-row {
+        grid-template-columns: 1fr;
+    }
+}
+
 .footer {
     
     padding-top: 10px;
