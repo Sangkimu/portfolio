@@ -102,7 +102,7 @@ li {
 .nav-links a {
     font-size: 25px;
     color: #fff;
-    transition: 3s;
+    transition: color 0.2s ease;
     opacity: 0;
     animation: slideTop .5s ease forwards;
     animation-delay: calc(.2s * var(--i));
@@ -142,12 +142,12 @@ li {
 
 .menu li:hover {
     background-color: #4c9e9e;
-    border-radius: 5px;
-    transition: 0.3s ease;
 }
 
 .menu li {
     padding: 5px 14px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
 }
 
 /* CHECKBOX HACK */
@@ -1929,6 +1929,16 @@ textarea {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 6px clamp(16px, 3vw, 40px);
+    }
+
+    .navbar .logo {
+        width: 46px;
+        height: 46px;
+        flex-basis: 46px;
+    }
+
     .about-row {
         display: grid;
         grid-template-rows: auto 1fr;
@@ -1970,9 +1980,7 @@ textarea {
     }
 
     .menu li:hover {
-        display: inline-block;
         background-color: #4c9e9e;
-        transition: 0.3s ease;
     }
 
     .menu li+li {
@@ -1989,7 +1997,7 @@ textarea {
 
     .home {
         width: 100%;
-        padding: 50px 5% 0;
+        padding: 68px 5% 0;
         height: auto;
         min-height: 100vh;
     }
@@ -2162,7 +2170,7 @@ textarea {
 
 @media (max-width: 480px) {
     .home {
-        padding: 40px 3% 0;
+        padding: 68px 3% 0;
     }
 
     .home-content h1 {
